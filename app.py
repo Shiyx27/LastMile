@@ -93,4 +93,7 @@ def upload_file():
     return render_template('index.html', top_20_hubs=[], top_20_per_zone=[], grouped_data=[], file_ready=False)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    
+    
+    port = int(os.environ.get("PORT", 5000))  # Use Render's assigned port
+    app.run(host='0.0.0.0', port=port)
